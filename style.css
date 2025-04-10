@@ -1,0 +1,78 @@
+/* frontend/css/style.css */
+
+body {
+    
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #FFF5F5;
+    color: #333333;
+  }
+  
+  .navbar {
+    background-color: #FF6B81;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav-links a:hover {
+    color: #FFD6E0;
+  }
+  
+  .hero {
+    background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/06/26/49330/relaxing-15.jpg');
+    background-color: #FFB3C6;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    height: 600px;
+    text-decoration: solid;
+    color: black;
+  }
+  
+  .about, .quotes {
+    padding: 40px;
+    background-color: #FFD6E0;
+    margin: 20px;
+    border-radius: 10px;
+  }
+  
+  .about h2, .quotes h2 {
+    color: #FF6B81;
+  }
+  
+  blockquote {
+    margin: 20px 0;
+    font-style: italic;
+    color: #A66DD4;
+    border-left: 5px solid #FF6B81;
+    padding-left: 15px;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #FFB3C6;
+    padding: 15px;
+    color: white;
+  }
+  
+  

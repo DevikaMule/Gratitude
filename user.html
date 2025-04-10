@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User - Gratitude Journal</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #FFDFEF;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #FF6B81;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.8em;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Main Content */
+    .main-container {
+      padding: 40px;
+      max-width: 900px;
+      margin: 50px auto;
+      background-color: #FFD6E0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-container h2 {
+      text-align: center;
+      color: #FF6B81;
+    }
+
+    /* Gratitude Entries Section */
+    .entries {
+      margin-top: 30px;
+    }
+
+    .entry {
+      background-color: #FFFBF0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .entry p {
+      font-size: 1.1em;
+      color: #5A2C6D;
+    }
+
+    .entry .date {
+      font-size: 0.9em;
+      color: #AA60C8;
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    /* Add New Entry Section */
+    .add-entry-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .add-entry-container input,
+    .add-entry-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #FFB3C6;
+      border-radius: 8px;
+      background-color: #FFFBF0;
+      font-size: 1em;
+    }
+
+    .add-entry-container button {
+      padding: 12px 20px;
+      background-color: #FF6B81;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-entry-container button:hover {
+      background-color: #A66DD4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #5A2C6D;
+    }
+
+    footer p {
+      color: #FF6B81;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Gratitude Journal</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <h2>Your Gratitude Journal</h2>
+
+    <!-- Gratitude Entries -->
+    <div class="entries">
+      <div class="entry">
+        <p>"I am grateful for the amazing support system around me."</p>
+        <div class="date">Date: April 10, 2025</div>
+      </div>
+
+      <div class="entry">
+        <p>"Thankful for my health and the ability to learn new things every day."</p>
+        <div class="date">Date: April 9, 2025</div>
+      </div>
+
+      <!-- Add More Entries Here -->
+    </div>
+
+    <!-- Add New Entry Form -->
+    <div class="add-entry-container">
+      <h3>Add a New Gratitude Entry</h3>
+      <textarea rows="4" placeholder="Write your gratitude message here..."></textarea>
+      <button>Add Entry</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gratitude Journal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Here you can write JavaScript to handle adding and displaying entries
+    // For example: Handling the "Add Entry" button functionality.
+    document.querySelector("button").addEventListener("click", function() {
+      const entryMessage = document.querySelector("textarea").value;
+      if (entryMessage.trim()) {
+        const entryDate = new Date().toLocaleDateString();
+
+        // Create a new entry element
+        const newEntry = document.createElement("div");
+        newEntry.classList.add("entry");
+        newEntry.innerHTML = `
+          <p>"${entryMessage}"</p>
+          <div class="date">Date: ${entryDate}</div>
+        `;
+
+        // Add the new entry to the entries section
+        document.querySelector(".entries").appendChild(newEntry);
+
+        // Clear the textarea after adding the entry
+        document.querySelector("textarea").value = '';
+      } else {
+        alert("Please write something in your gratitude message.");
+      }
+    });
+  </script>
+</body>
+</html>
