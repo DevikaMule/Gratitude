@@ -1,0 +1,190 @@
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #FFDFEF;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #FF6B81;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.8em;
+      color: white;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      display: inline;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Login Form Container */
+    .form-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #FFD6E0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #FF6B81;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #5A2C6D;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #FFB3C6;
+      border-radius: 8px;
+      background-color: #FFFBF0;
+      font-size: 1em;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #FF6B81;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #A66DD4;
+    }
+
+    .form-container p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #5A2C6D;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #5A2C6D;
+    }
+
+    footer p {
+      color: #FF6B81;
+    }
+
+    /* Success Message */
+    #success-message {
+      color: #32CD32;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+      display: none;
+    }
+
+    /* Error Message */
+    #error-message {
+      color: #FF5733;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2em;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">Gratitude Journal</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </div>
+
+  <!-- Login Form -->
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Success Message -->
+    <p id="success-message" style="display:none;">Login successful! Redirecting to your journal...</p>
+    <!-- Error Message -->
+    <p id="error-message" style="display:none;">Invalid credentials. Please try again.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Gratitude Journal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simulate registered user data
+    const registeredUser = {
+      email: 'devikamule8@gmail.com',
+      password: 'password123'
+    };
+
+    // Handle login form submission
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Validate the credentials (this is hardcoded for now)
+      if (email === registeredUser.email && password === registeredUser.password) {
+        // Show success message and redirect after 3 seconds
+        document.getElementById('success-message').style.display = 'block';
+
+        setTimeout(function() {
+          // Redirect to user page after successful login
+          window.location.href = 'user.html';
+        }, 3000);  // Redirect after 3 seconds
+      } else {
+        // Show error message if credentials do not match
+        document.getElementById('error-message').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
